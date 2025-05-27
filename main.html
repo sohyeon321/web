@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JM Film</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+  <!-- 상단 네비게이션 -->
+  <header class="flex justify-between items-center p-6">
+    <div class="text-red-500 border border-red-500 rounded-full px-4 py-1 font-semibold">JM FILM</div>
+    <nav class="space-x-6 text-sm text-white">
+      <a href="#projects" class="hover:underline">프로젝트</a>
+      <a href="#about" class="hover:underline">소개</a>
+      <a href="#contact" class="hover:underline">문의</a>
+    </nav>
+  </header>
+
+  <!-- 사이드 SNS 링크 -->
+  <div class="fixed top-1/2 right-0 transform -translate-y-1/2 space-y-4 pr-4 text-sm text-gray-300">
+    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Vimeo</a>
+    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Instagram</a>
+    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Twitter</a>
+    <a href="#" class="block transform rotate-90 origin-right hover:text-white">IMDb</a>
+  </div>
+
+  <!-- 메인 소개 -->
+  <main class="px-6 mt-20 max-w-5xl mx-auto">
+    <p class="text-lg text-gray-400">작가 | 감독</p>
+    <h1 class="text-6xl font-bold mt-2">이정민<br><span class="text-5xl">JM, Lee</span></h1>
+    <p class="mt-4 text-lg text-gray-300">
+      서울에서 주로 활동하는 감독이자<br>
+      JM Film 대표 이정민입니다.
+    </p>
+  </main>
+
+  <!-- 하단 이미지 섹션 -->
+  <section id="projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 px-6 max-w-6xl mx-auto pb-20">
+    <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-auto object-cover" />
+    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full h-auto object-cover" />
+  </section>
+</body>
+</html>

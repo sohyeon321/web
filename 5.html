@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>심리 테스트</title>
+  <link rel="stylesheet" href="styles.css"/>
+
+
+<script>
+    // 점수 추가 함수
+    function addScore(type) {
+      const scores = JSON.parse(localStorage.getItem("scores"));
+      scores[type] += 1;
+      localStorage.setItem("scores", JSON.stringify(scores));
+      window.location.href = "6.html";
+    }
+
+    // 여러 타입에 점수 추가 함수
+    function addScoreMultiple(types) {
+      const scores = JSON.parse(localStorage.getItem("scores"));
+      types.forEach(type => {
+        scores[type] += 1;
+      });
+      localStorage.setItem("scores", JSON.stringify(scores));
+      window.location.href = "6.html";
+    }
+  </script>
+
+
+</head>
+<body>
+  <header>
+    <div class="logo">심리테스트</div>
+    <nav>
+      <a href="login.html">로그인</a>
+      <a href="signup.html">회원가입</a>
+      <a href="#">그외</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="question">
+      <p>"우리 관계가 뭐야?" 라는 말을 들었을 때</p>
+    </div>
+    <div class="buttons">
+      <button onclick="addScoreMultiple(['여사제', '바보'])">'갑자기 무서워졌어'</button>
+      <button onclick="addScoreMultiple(['마법사', '탑'])">"우리 관계는 말이야..."</button>
+    </div>
+    
+  </main>
+</body>
+</html>

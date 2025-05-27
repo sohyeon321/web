@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  /* margin: 0;
+  padding: 0; */
+   font-family: 'Gowun Batang', serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #1f0036, #3a0a50, #5b0e75);
+  color: #f5eaff;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+
+header {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f9d6ff;
+  text-shadow: 0 0 8px rgba(255, 180, 255, 0.6);
+}
+
+nav a {
+   color: #e5c8ff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a:hover::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #e0b3ff;
+  box-shadow: 0 0 5px #e0b3ff;
+}
+
+main {
+  text-align: center;
+}
+
+.question p {
+  font-size: 20px;
+   margin-top: 100px;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(255, 220, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(200, 150, 255, 0.8), 0 0 40px rgba(255, 220, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(255, 220, 255, 0.3);
+  }
+}
+
+button {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(171, 133, 255, 0.6), 0 0 20px rgba(255, 200, 255, 0.4);
+}
+
+button:hover {
+  opacity: 0.9;
+  animation: pulseGlow 1.5s infinite;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(3.5px 3.5px at 30% 30%, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(3px 3px at 50% 20%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(3.5px 3.5px at 70% 50%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(4px 4px at 90% 80%, rgba(255, 255, 255, 0.75), transparent);
+  background-repeat: no-repeat;
+  animation: fallingStars 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes fallingStars {
+  0% {
+    background-position:
+      10% -20px,
+      30% -40px,
+      50% -30px,
+      70% -60px,
+      90% -90px;
+  }
+  100% {
+    background-position:
+      10% 110vh,
+      30% 130vh,
+      50% 120vh,
+      70% 150vh,
+      90% 180vh;
+  }
+}

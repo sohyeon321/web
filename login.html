@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>로그인</title>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* 기존 스타일과 동일한 전역 설정 */
+* {
+  box-sizing: border-box;
+  font-family: 'Gowun Batang', serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #1f0036, #3a0a50, #5b0e75);
+  color: #f5eaff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    radial-gradient(4px 4px at 10% 10%, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(3.5px 3.5px at 30% 30%, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(3px 3px at 50% 20%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(3.5px 3.5px at 70% 50%, rgba(255, 255, 255, 0.65), transparent),
+    radial-gradient(4px 4px at 90% 80%, rgba(255, 255, 255, 0.75), transparent);
+  background-repeat: no-repeat;
+  animation: fallingStars 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes fallingStars {
+  0% {
+    background-position:
+      10% -20px,
+      30% -40px,
+      50% -30px,
+      70% -60px,
+      90% -90px;
+  }
+  100% {
+    background-position:
+      10% 110vh,
+      30% 130vh,
+      50% 120vh,
+      70% 150vh,
+      90% 180vh;
+  }
+}
+
+/* 로그인 박스 */
+.login-container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  border-radius: 16px;
+ 
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #f9d6ff;
+  
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-form input {
+  padding: 14px 18px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5eaff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-form input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 8px rgba(255, 200, 255, 0.4);
+}
+
+/* 버튼은 기존과 동일 스타일 유지 */
+button {
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(171, 133, 255, 0.6), 0 0 20px rgba(255, 200, 255, 0.4);
+}
+
+button:hover {
+  opacity: 0.9;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(255, 220, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(200, 150, 255, 0.8), 0 0 40px rgba(255, 220, 255, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(200, 150, 255, 0.4), 0 0 20px rgba(255, 220, 255, 0.3);
+  }
+}
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #e5c8ff;
+}
+
+.signup-link a {
+  color: #e0b3ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>로그인</h2>
+    <form class="login-form">
+      <input type="text" placeholder="아이디" required />
+      <input type="password" placeholder="비밀번호" required />
+      <button type="submit">로그인</button>
+    </form>
+    <p class="signup-link">계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+  </div>
+</body>
+</html>

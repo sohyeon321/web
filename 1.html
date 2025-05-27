@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>심리 테스트</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script>
+    // 초기 점수 설정 (페이지 처음 열 때만)
+   
+      localStorage.setItem("scores", JSON.stringify({
+        마법사: 0,
+        여사제: 0,
+        바보: 0,
+        탑: 0
+      }));
+    
+
+    function addScore(type) {
+      const scores = JSON.parse(localStorage.getItem("scores"));
+      scores[type] += 1;
+      localStorage.setItem("scores", JSON.stringify(scores));
+      window.location.href = "2.html"; // 다음 질문으로 이동
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">심리테스트</div>
+    <nav>
+      <a href="login.html">로그인</a>
+      <a href="signup.html">회원가입</a>
+      <a href="#">그외</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="question">
+      <p>자기소개 하는 시간이</p>
+    </div>
+    <div class="buttons">
+      <!-- "내심 좋다" → 마법사 -->
+      <button onclick="addScoreMultiple(['마법사', '바보', '탑'])">내심 좋다</button>
+      <!-- "잠깐 기절하고 싶다" → 여사제, 바보, 탑 -->
+      <button onclick="addScore('여사제')">잠깐 기절하고 싶다</button>
+    </div>
+  </main>
+
+  <script>
+    function addScoreMultiple(types) {
+      const scores = JSON.parse(localStorage.getItem("scores"));
+      types.forEach(type => {
+        scores[type] += 1;
+      });
+      localStorage.setItem("scores", JSON.stringify(scores));
+      window.location.href = "2.html";
+    }
+  </script>
+</body>
+</html>

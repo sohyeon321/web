@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결과 페이지</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* 수직 정렬을 위해 추가 */
+      height: 100vh;
+      background: linear-gradient(to bottom, #1f0036, #3a0a50, #5b0e75);
+      margin: 0;
+      color: #ffe6ff;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .message {
+       font-family: 'Gowun Batang', serif;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .card-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      margin-top: 0;
+    }
+
+    .card {
+      width: 100px;
+      height: 150px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 200, 255, 0.4);
+      position: absolute;
+      top: 25px;
+      left: 100px;
+      animation: shuffle 2s ease-in-out infinite;
+      background-image: url('카드이미지.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes shuffle {
+      0% {
+        transform: translateX(0) rotate(0deg);
+        z-index: 1;
+      }
+      25% {
+        transform: translateX(-60px) rotate(-10deg);
+        z-index: 0;
+      }
+      50% {
+        transform: translateX(60px) rotate(10deg);
+        z-index: 2;
+      }
+      75% {
+        transform: translateX(-40px) rotate(-5deg);
+        z-index: 1;
+      }
+      100% {
+        transform: translateX(0) rotate(0deg);
+        z-index: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <script>
+    
+    window.onload = function () {
+      setTimeout(() => {
+        const scores = JSON.parse(localStorage.getItem("scores"));
+
+  
+
+        let maxType = null;
+        let maxScore = -1;
+
+        for (const [type, score] of Object.entries(scores)) {
+            const numericScore = Number(score); // 문자열이면 숫자로 변환
+            if (numericScore > maxScore) {
+              maxScore = numericScore;
+              maxType = type;
+            }
+        }
+
+        switch (maxType) {
+          case "마법사":
+            window.location.href = "magician.html";
+            break;
+          case "여사제":
+            window.location.href = "priestess.html";
+            break;
+          case "바보":
+            window.location.href = "fool.html";
+            break;
+          case "탑":
+            window.location.href = "tower.html";
+            break;
+          default:
+            alert("결과를 계산할 수 없습니다.");
+        }
+      }, 4000); 
+    };
+  </script>
+</head>
+<body>
+  <div class="message">카드들이 당신의 내면을 읽고 있어요...</div>
+  <div class="card-container">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
+</body>
+</html>
