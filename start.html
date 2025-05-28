@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1023;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .start-page {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+        width: 100vw;       /* 화면 너비 꽉 채우기 */
+  max-width: 100vw;   /* 넘치지 않게 */
+  padding: 40px 10px; /* 좌우 패딩 줄이기 */
+  box-sizing: border-box;
+  overflow-x: visible; /* 좌우 넘침 허용 */
+     
+      padding: 40px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #f5eaff;
+      text-shadow: 0 0 10px rgba(255, 180, 255, 0.3);
+    }
+
+    .subtitle {
+      font-size: 20px;
+      margin-bottom: 50px;
+      color: #e5c8ff;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #caa9ff, #e8d4ff);
+      color: #3b004f;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(200, 150, 255, 0.5);
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .cards {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 20px;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .card {
+      width: 140px;       /* 크기 키움 */
+      height: 220px;      /* 크기 키움 */
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 200, 255, 0.4);
+      transform: translateY(0);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+
+      background-image: url('카드이미지.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .cards.animate .card:nth-child(1) {
+      transform: translate(-160px, -70px) rotate(-10deg);
+      opacity: 1;
+    }
+
+    .cards.animate .card:nth-child(2) {
+      transform: translate(0, -100px) rotate(0deg);
+      opacity: 1;
+    }
+
+    .cards.animate .card:nth-child(3) {
+      transform: translate(160px, -70px) rotate(10deg);
+      opacity: 1;
+    }
+
+    .cards.animate {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <main class="start-page">
+    <h1 class="title">당신의 내면을 비추는 타로 심리테스트</h1>
+    <p class="subtitle">깊은 우주의 에너지로, 당신의 성향을 알아보세요.</p>
+    <button id="startButton">시작하기</button>
+
+    <div class="cards" id="cardContainer">
+      <div class="card"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('startButton').addEventListener('click', () => {
+      const cards = document.getElementById('cardContainer');
+      cards.classList.add('animate');
+
+      setTimeout(() => {
+        window.location.href = '1.html';
+      }, 1500); // 애니메이션 후 이동
+    });
+  </script>
+</body>
+</html>

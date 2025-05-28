@@ -3,42 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JM Film</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>타로 심리테스트 포트폴리오</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #1a0023, #000);
+  color: #fff;
+  line-height: 1.6;
+}
+
+header.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: url('tarot-background.jpg') no-repeat center center/cover;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #fceaff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #6a0dad;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #9c4dcc;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f0caff;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "🌟 ";
+}
+
+.screenshots img {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #110015;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffb4ff;
+  text-decoration: none;
+}
+
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-  <!-- 상단 네비게이션 -->
-  <header class="flex justify-between items-center p-6">
-    <div class="text-red-500 border border-red-500 rounded-full px-4 py-1 font-semibold">JM FILM</div>
-    <nav class="space-x-6 text-sm text-white">
-      <a href="#projects" class="hover:underline">프로젝트</a>
-      <a href="#about" class="hover:underline">소개</a>
-      <a href="#contact" class="hover:underline">문의</a>
-    </nav>
+<body>
+  <header class="hero">
+    <h1>🔮 Tarot Mind Test</h1>
+    <p>당신의 내면을 비추는 타로 심리테스트</p>
+    <a href="https://your-test-link.com" class="cta-button">테스트 하러 가기</a>
   </header>
 
-  <!-- 사이드 SNS 링크 -->
-  <div class="fixed top-1/2 right-0 transform -translate-y-1/2 space-y-4 pr-4 text-sm text-gray-300">
-    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Vimeo</a>
-    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Instagram</a>
-    <a href="#" class="block transform rotate-90 origin-right hover:text-white">Twitter</a>
-    <a href="#" class="block transform rotate-90 origin-right hover:text-white">IMDb</a>
-  </div>
-
-  <!-- 메인 소개 -->
-  <main class="px-6 mt-20 max-w-5xl mx-auto">
-    <p class="text-lg text-gray-400">작가 | 감독</p>
-    <h1 class="text-6xl font-bold mt-2">이정민<br><span class="text-5xl">JM, Lee</span></h1>
-    <p class="mt-4 text-lg text-gray-300">
-      서울에서 주로 활동하는 감독이자<br>
-      JM Film 대표 이정민입니다.
+  <section class="about">
+    <h2>프로젝트 소개</h2>
+    <p>
+      이 프로젝트는 메이저 아르카나 타로 카드의 상징을 바탕으로 사용자의 성격과 내면을 알아보는 심리테스트입니다.
     </p>
-  </main>
-
-  <!-- 하단 이미지 섹션 -->
-  <section id="projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 px-6 max-w-6xl mx-auto pb-20">
-    <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-auto object-cover" />
-    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full h-auto object-cover" />
+    <ul>
+      <li>🧭 직관적인 UX</li>
+      <li>📜 타로 카드 기반 결과 도출</li>
+      <li>📲 모바일 반응형</li>
+    </ul>
   </section>
+
+  <section class="screenshots">
+    <h2>미리보기</h2>
+    <img src="screenshot1.jpg" alt="테스트 시작 화면" />
+    <img src="screenshot2.jpg" alt="타로 결과 화면" />
+  </section>
+
+  <section class="stack">
+    <h2>기술 스택</h2>
+    <p>HTML, CSS, JavaScript (Vanilla)</p>
+  </section>
+
+  <footer>
+    <p>© 2025 by Tarot Mind Test | <a href="mailto:your@email.com">Contact</a></p>
+  </footer>
 </body>
 </html>
