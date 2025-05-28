@@ -2,133 +2,216 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="styles.css"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarot Mind Test</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" />
   <style>
-    body {
+    /* 기본 설정 */
+
+    * {
       margin: 0;
-      background-color: #1a1023;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .start-page {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-        width: 100vw;       /* 화면 너비 꽉 채우기 */
-  max-width: 100vw;   /* 넘치지 않게 */
-  padding: 40px 10px; /* 좌우 패딩 줄이기 */
-  box-sizing: border-box;
-  overflow-x: visible; /* 좌우 넘침 허용 */
-     
-      padding: 40px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .title {
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 20px;
+    html, body {
+      height: auto;
+      overflow-y: auto;
+      font-family: 'Cinzel Decorative', serif;
+      background: linear-gradient(to bottom, #1a0023, #000);
       color: #f5eaff;
-      text-shadow: 0 0 10px rgba(255, 180, 255, 0.3);
+      line-height: 1.8;
     }
 
-    .subtitle {
-      font-size: 20px;
-      margin-bottom: 50px;
-      color: #e5c8ff;
-      line-height: 1.6;
+    /* Section 공통 */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
     }
 
-    button {
-      padding: 12px 24px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #caa9ff, #e8d4ff);
-      color: #3b004f;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(200, 150, 255, 0.5);
-      transition: transform 0.2s;
+    h2 {
+      font-size: 2.2rem;
+      color: #f0caff;
+      margin-bottom: 20px;
     }
 
-    button:hover {
-      transform: scale(1.05);
+    /* 소개 Section */
+    .about p {
+  margin-bottom: 2.5rem;
+}
+
+
+    .about ul {
+      list-style: none;
+      padding: 0;
     }
 
-    .cards {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    .about li {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
+
+    /* 스크린샷 Section */
+    .screenshot-container {
       display: flex;
-      gap: 20px;
-      pointer-events: none;
-      opacity: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
     }
 
-    .card {
-      width: 140px;       /* 크기 키움 */
-      height: 220px;      /* 크기 키움 */
+    .screenshot-container img {
+      width: 100%;
+      max-width: 300px;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 200, 255, 0.4);
-      transform: translateY(0);
-      opacity: 0;
-      transition: transform 0.8s ease, opacity 0.8s ease;
-
-      background-image: url('카드이미지.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
 
-    .cards.animate .card:nth-child(1) {
-      transform: translate(-160px, -70px) rotate(-10deg);
-      opacity: 1;
+    .screenshot-container p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #d5b2ff;
     }
 
-    .cards.animate .card:nth-child(2) {
-      transform: translate(0, -100px) rotate(0deg);
-      opacity: 1;
+    /* CTA 버튼 섹션 */
+    .call-to-action {
+      text-align: center;
+      padding: 60px 20px;
     }
 
-    .cards.animate .card:nth-child(3) {
-      transform: translate(160px, -70px) rotate(10deg);
-      opacity: 1;
+    .cta-button {
+      background-color: #a24ac9;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      display: inline-block;
     }
 
-    .cards.animate {
-      opacity: 1;
+    .cta-button:hover {
+      background-color: #d56eff;
     }
+
+    /* 푸터 */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #110015;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffb4ff;
+      text-decoration: none;
+    }
+  .features {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+  color: #f5eaff; /* about 섹션과 동일한 텍스트 색상 */
+}
+
+.features h2 {
+  font-size: 2.2rem;
+  color: #f0caff; /* about 섹션 제목 색상과 동일 */
+  margin-bottom: 20px;
+}
+
+.features p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+.features-cta {
+  margin-top: 20px; /* 리스트와 버튼 사이 간격 */
+}
+
+
   </style>
 </head>
 <body>
-  <main class="start-page">
-    <h1 class="title">당신의 내면을 비추는 타로 심리테스트</h1>
-    <p class="subtitle">깊은 우주의 에너지로, 당신의 성향을 알아보세요.</p>
-    <button id="startButton">시작하기</button>
 
-    <div class="cards" id="cardContainer">
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
+  <main>
+    <section class="about">
+      <h2>프로젝트 소개</h2>
+      <p>
+        Tarot Mind Test는 메이저 아르카나 타로 카드의 상징을 활용하여<br>사용자의 성격과 내면을 해석하는 웹 기반 심리테스트입니다.
+      </p>
+      <p>
+        사용자 경험을 직관적으로 설계하고, 타로 카드를 통한 결과 도출 및 감성적인 UI 디자인을 통해 몰입감을 극대화했습니다.
+      </p>
+      <ul>
+        <li>🌞 직관적인 UX</li>
+        <li>📜 타로 카드 기반 결과 도출</li>
+        <li>📱 모바일 반응형</li>
+      </ul>
+    </section>
+
+
+<section class="features">
+  <h2>특징 및 검사 내용</h2>
+  <p>
+    Tarot Mind Test는 다양한 질문 유형을 통해<br>
+    사용자 내면의 깊은 심리를 탐구합니다.
+  </p>
+  <p>
+    각 질문은 타로 카드의 상징과 연결되어 있으며,<br>
+    이를 바탕으로 다채로운 심리 분석 결과를 제공합니다.
+  </p>
+  <ul>
+    <li>❓ 객관식, 주관식, 직관 선택형 질문 포함</li>
+    <li>🔮 메이저 아르카나 타로 카드와 연계된 결과 도출</li>
+    <li>📈 개인별 심층 심리 프로파일 생성</li>
+    <li>✨ 감성적이고 몰입감 높은 UI 디자인</li>
+  </ul>
+
+  <!-- 버튼을 features 안으로 넣음 -->
+  <div class="features-cta">
+    <a href="res.html" class="cta-button">결과 유형 보러가기</a>
+  </div>
+</section>
+
+    
+
+    <section class="screenshots">
+      <h2>미리보기</h2>
+      <div class="screenshot-container">
+        <div>
+          <img src="시작페이지.png" alt="테스트 시작 화면" />
+          <p>테스트 시작 화면</p>
+        </div>
+        <div>
+          <img src="결과페이지.png" alt="타로 결과 화면" />
+          <p>타로 결과 화면</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- ✅ 하단으로 옮긴 CTA 버튼 -->
+    <section class="call-to-action">
+      <a href="start.html" class="cta-button">테스트 하러 가기</a>
+    </section>
   </main>
 
-  <script>
-    document.getElementById('startButton').addEventListener('click', () => {
-      const cards = document.getElementById('cardContainer');
-      cards.classList.add('animate');
+  <footer>
+    <p>© 2025 Tarot Mind Test | <a href="mailto:your@email.com">Contact</a></p>
+  </footer>
 
-      setTimeout(() => {
-        window.location.href = '1.html';
-      }, 1500); // 애니메이션 후 이동
-    });
-  </script>
 </body>
 </html>
