@@ -65,19 +65,25 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 200, 255, 0.3);
     }
+
     html, body {
-    height: auto;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-  }
+      height: auto;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+    }
+
+    .video-wrapper {
+      text-align: center;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="Priestess.jpg" alt="The High Priestes 타로카드 이미지" class="tarot-image">
-    <h2>🃏 당신은 <strong>The High Priestes (여사제)</strong> 타입입니다!</h2>
+    <img src="Priestess.jpg" alt="The High Priestess 타로카드 이미지" class="tarot-image">
+    <h2>🃏 당신은 <strong>The High Priestess (여사제)</strong> 타입입니다!</h2>
     <p class="keyword"><strong>키워드:</strong> 직관적 · 신비로움 · 내면 탐구자</p>
     <p><strong>성격 한 줄 요약:</strong> "모든 답은 내 안에 있다."</p>
 
@@ -105,32 +111,18 @@
     <blockquote>
       당신의 직관은 날카롭지만, <strong>때로는 마음을 열고 말로 표현하는 연습</strong>이 필요해요. 세상도 당신을 더 알고 싶어하니까요.
     </blockquote>
+
+    <div class="video-wrapper">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/72FzC54G2rw?si=nXuHDe17idOYz3AS" 
+        title="YouTube video player"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
-  <p>
-    <iframe width="560" height="315" 
-    src="https://youtu.be/72FzC54G2rw?si=nXuHDe17idOYz3AS" 
-    frameborder="0" allowfullscreen></iframe>
-  </p>
-  <p>
-    <div id="disqus_thread"></div>
-<script>
-    /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-    /*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = 'https://web1-cn3yqvkpdl.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </p>
 </body>
 </html>
