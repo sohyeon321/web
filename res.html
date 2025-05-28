@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>검사 유형 결과</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" />
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Cinzel Decorative', serif;
+      background: linear-gradient(to bottom, #1a0023, #000);
+      color: #f5eaff;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      max-width: 900px;
+      width: 100%;
+      gap: 40px;
+      background-color: rgba(26, 0, 35, 0.7);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px #a24ac9aa;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .image-wrapper {
+      flex: 1 1 300px;
+      max-width: 300px;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      object-fit: cover;
+    }
+
+    .description {
+      flex: 2 1 400px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    h1 {
+      width: 100%;
+      font-size: 2.4rem;
+      color: #f0caff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .image-wrapper, .description {
+        max-width: 100%;
+        flex: unset;
+      }
+
+      .description {
+        font-size: 1.1rem;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>The magician</h1>
+
+    <div class="image-wrapper">
+      <img src="The Magician.jpg" alt="타입명 이미지" />
+    </div>
+
+    <div class="description">
+      <p>
+        이 유형은 창의력과 변화의 상징인 '더 마법사'를 나타냅니다.  
+        도전과 새로운 시작을 즐기며, 자신의 능력을 믿고 적극적으로 행동하는 특징이 있습니다.  
+        주변에 긍정적인 에너지를 전파하며, 문제 해결 능력이 뛰어납니다.
+      </p>
+      <p>
+        또한, 내면의 강한 의지와 통찰력을 가지고 있어, 어려운 상황에서도 중심을 잡을 수 있습니다.  
+        이 유형은 자신만의 길을 개척하고자 하는 사람들에게 잘 맞습니다.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -3,128 +3,213 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>타로 심리테스트 포트폴리오</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Tarot Mind Test</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" />
   <style>
-    /* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    /* 기본 설정 */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: auto;
+      overflow-y: auto;
+      font-family: 'Cinzel Decorative', serif;
+      background: linear-gradient(to bottom, #1a0023, #000);
+      color: #f5eaff;
+      line-height: 1.8;
+    }
+
+    /* Section 공통 */
+    section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #f0caff;
+      margin-bottom: 20px;
+    }
+
+    /* 소개 Section */
+    .about p {
+  margin-bottom: 2.5rem;
 }
 
-body {
-  font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom, #1a0023, #000);
-  color: #fff;
-  line-height: 1.6;
-}
 
-header.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: url('tarot-background.jpg') no-repeat center center/cover;
-}
+    .about ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #fceaff;
-}
+    .about li {
+      margin: 8px 0;
+      font-size: 1.1rem;
+    }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
+    /* 스크린샷 Section */
+    .screenshot-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
 
-.cta-button {
-  background-color: #6a0dad;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
+    .screenshot-container img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
 
-.cta-button:hover {
-  background-color: #9c4dcc;
-}
+    .screenshot-container p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #d5b2ff;
+    }
 
-section {
+    /* CTA 버튼 섹션 */
+    .call-to-action {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-button {
+      background-color: #a24ac9;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background-color: #d56eff;
+    }
+
+    /* 푸터 */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      background-color: #110015;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffb4ff;
+      text-decoration: none;
+    }
+  .features {
   padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #f0caff;
-}
-
-ul {
-  list-style: none;
-}
-
-ul li::before {
-  content: "🌟 ";
-}
-
-.screenshots img {
-  width: 100%;
-  max-width: 400px;
-  margin: 10px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-footer {
+  max-width: 900px;
+  margin: 0 auto 80px;
   text-align: center;
-  padding: 40px 0;
-  background-color: #110015;
-  font-size: 0.9rem;
+  color: #f5eaff; /* about 섹션과 동일한 텍스트 색상 */
 }
 
-footer a {
-  color: #ffb4ff;
-  text-decoration: none;
+.features h2 {
+  font-size: 2.2rem;
+  color: #f0caff; /* about 섹션 제목 색상과 동일 */
+  margin-bottom: 20px;
 }
+
+.features p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+
 
   </style>
 </head>
 <body>
-  <header class="hero">
-    <h1>🔮 Tarot Mind Test</h1>
-    <p>당신의 내면을 비추는 타로 심리테스트</p>
-    <a href="https://your-test-link.com" class="cta-button">테스트 하러 가기</a>
-  </header>
 
-  <section class="about">
-    <h2>프로젝트 소개</h2>
-    <p>
-      이 프로젝트는 메이저 아르카나 타로 카드의 상징을 바탕으로 사용자의 성격과 내면을 알아보는 심리테스트입니다.
-    </p>
-    <ul>
-      <li>🧭 직관적인 UX</li>
-      <li>📜 타로 카드 기반 결과 도출</li>
-      <li>📲 모바일 반응형</li>
-    </ul>
-  </section>
+  <main>
+    <section class="about">
+      <h2>프로젝트 소개</h2>
+      <p>
+        Tarot Mind Test는 메이저 아르카나 타로 카드의 상징을 활용하여<br>사용자의 성격과 내면을 해석하는 웹 기반 심리테스트입니다.
+      </p>
+      <p>
+        사용자 경험을 직관적으로 설계하고, 타로 카드를 통한 결과 도출 및 감성적인 UI 디자인을 통해 몰입감을 극대화했습니다.
+      </p>
+      <ul>
+        <li>🌞 직관적인 UX</li>
+        <li>📜 타로 카드 기반 결과 도출</li>
+        <li>📱 모바일 반응형</li>
+      </ul>
+    </section>
 
-  <section class="screenshots">
-    <h2>미리보기</h2>
-    <img src="screenshot1.jpg" alt="테스트 시작 화면" />
-    <img src="screenshot2.jpg" alt="타로 결과 화면" />
-  </section>
 
-  <section class="stack">
-    <h2>기술 스택</h2>
-    <p>HTML, CSS, JavaScript (Vanilla)</p>
-  </section>
+<section class="features">
+  <h2>특징 및 검사 내용</h2>
+  <p>
+    Tarot Mind Test는 다양한 질문 유형을 통해<br>
+    사용자 내면의 깊은 심리를 탐구합니다.
+  </p>
+  <p>
+    각 질문은 타로 카드의 상징과 연결되어 있으며,<br>
+    이를 바탕으로 다채로운 심리 분석 결과를 제공합니다.
+  </p>
+  <ul>
+    <li>❓ 객관식, 주관식, 직관 선택형 질문 포함</li>
+    <li>🔮 메이저 아르카나 타로 카드와 연계된 결과 도출</li>
+    <li>📈 개인별 심층 심리 프로파일 생성</li>
+    <li>✨ 감성적이고 몰입감 높은 UI 디자인</li>
+  </ul>
+
+  <!-- 버튼을 features 안으로 넣음 -->
+  <div class="features-cta">
+    <a href="res.html" class="cta-button">결과 유형 보러가기</a>
+  </div>
+</section>
+
+    
+
+    <section class="screenshots">
+      <h2>미리보기</h2>
+      <div class="screenshot-container">
+        <div>
+          <img src="시작페이지.png" alt="테스트 시작 화면" />
+          <p>테스트 시작 화면</p>
+        </div>
+        <div>
+          <img src="결과페이지.png" alt="타로 결과 화면" />
+          <p>타로 결과 화면</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- ✅ 하단으로 옮긴 CTA 버튼 -->
+    <section class="call-to-action">
+      <a href="start.html" class="cta-button">테스트 하러 가기</a>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 by Tarot Mind Test | <a href="mailto:your@email.com">Contact</a></p>
+    <p>© 2025 Tarot Mind Test | <a href="mailto:your@email.com">Contact</a></p>
   </footer>
+
 </body>
 </html>
