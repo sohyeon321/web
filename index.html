@@ -3,216 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tarot Mind Test</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" />
+  <title>이력서 Resume Sample</title>
   <style>
-    /* 기본 설정 */
-
-    * {
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      background-color: #fff;
+      color: #333;
     }
-
-    html, body {
-      height: auto;
-      overflow-y: auto;
-      font-family: 'Cinzel Decorative', serif;
-      background: linear-gradient(to bottom, #1a0023, #000);
-      color: #f5eaff;
-      line-height: 1.8;
-    }
-
-    /* Section 공통 */
-    section {
-      padding: 80px 20px;
+    .container {
+      width: 80%;
       max-width: 900px;
-      margin: auto;
-      text-align: center;
+      margin: 2rem auto;
+      padding: 2rem;
     }
-
-    h2 {
-      font-size: 2.2rem;
-      color: #f0caff;
-      margin-bottom: 20px;
+    h1, h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
     }
-
-    /* 소개 Section */
-    .about p {
-  margin-bottom: 2.5rem;
-}
-
-
-    .about ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .about li {
-      margin: 8px 0;
-      font-size: 1.1rem;
-    }
-
-    /* 스크린샷 Section */
-    .screenshot-container {
+    .profile {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 20px;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
-
-    .screenshot-container img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    .profile img {
+      width: 140px;
+      height: 170px;
+      object-fit: cover;
+      background: #ddd;
     }
-
-    .screenshot-container p {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      color: #d5b2ff;
+    .info h3 {
+      margin: 0;
     }
-
-    /* CTA 버튼 섹션 */
-    .call-to-action {
+    .info p {
+      margin: 0.5rem 0;
+    }
+    .section-boxes {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .section-boxes a.box {
+      flex: 1;
       text-align: center;
-      padding: 60px 20px;
-    }
-
-    .cta-button {
-      background-color: #a24ac9;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
+      padding: 1rem;
+      background-color: #f5f5f5;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-      display: inline-block;
+      color: inherit;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
-
-    .cta-button:hover {
-      background-color: #d56eff;
+    .section-boxes a.box:hover {
+      background-color: #e0e0e0;
     }
-
-    /* 푸터 */
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      background-color: #110015;
-      font-size: 0.9rem;
+    .education .edu-item {
+      margin-bottom: 1.5rem;
     }
-
-    footer a {
-      color: #ffb4ff;
-      text-decoration: none;
+    .skills {
+      margin-top: 3rem;
     }
-  .features {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto 80px;
-  text-align: center;
-  color: #f5eaff; /* about 섹션과 동일한 텍스트 색상 */
-}
-
-.features h2 {
-  font-size: 2.2rem;
-  color: #f0caff; /* about 섹션 제목 색상과 동일 */
-  margin-bottom: 20px;
-}
-
-.features p {
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features li {
-  margin: 8px 0;
-  font-size: 1.1rem;
-}
-.features-cta {
-  margin-top: 20px; /* 리스트와 버튼 사이 간격 */
-}
-
-
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+    }
+    .skill-details {
+      flex: 1;
+    }
+    .bar-bg {
+      background: #eee;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 0.3rem;
+    }
+    .bar-fill {
+      background: #1a133f;
+      height: 100%;
+    }
+    .projects {
+      margin-top: 3rem;
+    }
+    .project-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+    }
+    .project-item img {
+      width: 150px;
+      height: 150px;
+      background: #eee;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .project-details {
+      flex: 1;
+    }
+    .project-details h3 {
+      margin: 0 0 0.9rem;
+    }
+    .project-details p {
+      margin: 0.9rem 0;
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>이력서 Resume Sample</h1>
 
-  <main>
-    <section class="about">
-      <h2>프로젝트 소개</h2>
-      <p>
-        Tarot Mind Test는 메이저 아르카나 타로 카드의 상징을 활용하여<br>사용자의 성격과 내면을 해석하는 웹 기반 심리테스트입니다.
-      </p>
-      <p>
-        사용자 경험을 직관적으로 설계하고, 타로 카드를 통한 결과 도출 및 감성적인 UI 디자인을 통해 몰입감을 극대화했습니다.
-      </p>
-      <ul>
-        <li>🌞 직관적인 UX</li>
-        <li>📜 타로 카드 기반 결과 도출</li>
-        <li>📱 모바일 반응형</li>
-      </ul>
+    <section class="profile">
+      <img src="profile.jpg" alt="Profile Photo" />
+      <div class="info">
+        <h3>김소현 Sohyeon Kim</h3>
+        <p>소개하는 멘트<br><em>About me</em></p>
+        <p><strong>GUI Designer</strong><br>PC & Mobile Web, App Design</p>
+        <p>📱 82-010-****-****</p>
+        <p>📧 mail@mail.com</p>
+      </div>
     </section>
 
+    <div class="section-boxes">
+      <a href="#skills" class="box">
+        <strong>스킬</strong><br><em>Skill</em>
+      </a>
+      <a href="#projects" class="box">
+        <strong>프로젝트 경력</strong><br><em>Work Experience</em>
+      </a>
+    </div>
 
-<section class="features">
-  <h2>특징 및 검사 내용</h2>
-  <p>
-    Tarot Mind Test는 다양한 질문 유형을 통해<br>
-    사용자 내면의 깊은 심리를 탐구합니다.
-  </p>
-  <p>
-    각 질문은 타로 카드의 상징과 연결되어 있으며,<br>
-    이를 바탕으로 다채로운 심리 분석 결과를 제공합니다.
-  </p>
-  <ul>
-    <li>❓ 객관식, 주관식, 직관 선택형 질문 포함</li>
-    <li>🔮 메이저 아르카나 타로 카드와 연계된 결과 도출</li>
-    <li>📈 개인별 심층 심리 프로파일 생성</li>
-    <li>✨ 감성적이고 몰입감 높은 UI 디자인</li>
-  </ul>
+    <section class="education">
+      <h2>학력 Education</h2>
+      <div class="edu-item">
+        <p>🎓 <strong>군산대학교 재학</strong></p>
+        <p>University Seoul, Republic of Korea</p>
+        <p>컴퓨터소프트웨어특성화대학, 컴퓨터정보공학과과, 평점: 0.00/4.5</p>
+      </div>
+    </section>
 
-  <!-- 버튼을 features 안으로 넣음 -->
-  <div class="features-cta">
-    <a href="res.html" class="cta-button">결과 유형 보러가기</a>
-  </div>
-</section>
+    <section class="skills" id="skills">
+      <h2>스킬 Skill</h2>
 
-    
-
-    <section class="screenshots">
-      <h2>미리보기</h2>
-      <div class="screenshot-container">
-        <div>
-          <img src="시작페이지.png" alt="테스트 시작 화면" />
-          <p>테스트 시작 화면</p>
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png" alt="Notion">
+        <div class="skill-details">
+          <div>Notion<br><small>사용해본 적이 있고 프로젝트에서 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
         </div>
-        <div>
-          <img src="결과페이지.png" alt="타로 결과 화면" />
-          <p>타로 결과 화면</p>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="PowerPoint">
+        <div class="skill-details">
+          <div>Microsoft PowerPoint<br><small>기능을 사용할 수 있으며 프로젝트에 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel">
+        <div class="skill-details">
+          <div>Microsoft Excel<br><small>기능을 사용할 수 있으며 프로젝트에 가끔 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 50%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732234.png" alt="Word">
+        <div class="skill-details">
+          <div>Microsoft Word<br><small>기능을 사용할 수 있으며 프로젝트에 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 70%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968752.png" alt="Teams">
+        <div class="skill-details">
+          <div>Teams<br><small>기능을 사용할 수 있으며 프로젝트에 가끔 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 30%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+        <div class="skill-details">
+          <div>Python<br><small>기능을 사용할 수 있으며 프로젝트에 가끔 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 50%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C">
+        <div class="skill-details">
+          <div>C언어<br><small>기능을 사용할 수 있으며 프로젝트에 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" alt="C++">
+        <div class="skill-details">
+          <div>C++<br><small>기능을 사용할 수 있으며 프로젝트에 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/6132/6132220.png" alt="C#">
+        <div class="skill-details">
+          <div>C#<br><small>기능을 사용할 수 있으며 프로젝트에 가끔 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 50%;"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java">
+        <div class="skill-details">
+          <div>Java<br><small>기능을 사용할 수 있으며 프로젝트에 자주 사용</small></div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
         </div>
       </div>
     </section>
-    
 
-    <!-- ✅ 하단으로 옮긴 CTA 버튼 -->
-    <section class="call-to-action">
-      <a href="start.html" class="cta-button">테스트 하러 가기</a>
+    <section class="projects" id="projects">
+      <h2>프로젝트 경력 Work Experience</h2>
+
+      <div class="project-item">
+        <img src="The Tower.jpg" alt="타로 카드">
+        <div class="project-details">
+          <h3>프로젝트 이름 - 타로 심리테스트</h3>
+          <p>2025.04.24 - 2025.5.20</p>
+          <p>타로를 테마로한 심리테스트<br>디자인과 내용 측면에서 타로의 느낌이 남</p>
+          <p>사용한 툴: html, css, javascript</p>
+          <p>🔗 <a href="resume.html">프로젝트 이름 자세히 보기</a></p>
+        </div>
+      </div>
     </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Tarot Mind Test | <a href="mailto:your@email.com">Contact</a></p>
-  </footer>
-
-  
+  </div>
 </body>
 </html>
