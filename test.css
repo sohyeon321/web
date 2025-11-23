@@ -1,0 +1,586 @@
+:root {
+  --cover-height: 450px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background: #121212;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--cover-height);
+  z-index: 0;
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: var(--cover-height);
+  background: rgba(220, 210, 255, 0.4);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.3s linear;
+}
+
+.red-gradient-bg {
+  position: absolute;
+  top: var(--cover-height);
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(220, 210, 255, 0.4), rgba(220, 210, 255, 0.15), rgba(220, 210, 255, 0));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.profile-header,
+.tabs,
+.container {
+  position: relative;
+  z-index: 5;
+}
+
+.profile-header {
+  width: 85%;
+  background: #181818;
+  margin: calc(var(--cover-height) - 260px) auto 0;
+  border-radius: 12px;
+  padding: 25px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  transform: translateY(-40px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.profile-image img {
+  width: auto;      /* 원본 비율 유지 */
+  height: 130px;    /* 높이만 맞추고 */
+  border-radius: 0; /* 둥글기 제거 */
+  border: none;     /* 테두리 제거 */
+  object-fit: contain; /* 잘리지 않게 */
+}
+
+
+.profile-center h2 {
+  font-size: 22px;
+}
+
+.profile-center p {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
+.profile-right {
+  position: absolute;
+  right: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+
+.right-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats strong {
+  font-size: 18px;
+}
+
+.stats span {
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.friend-wrapper {
+  position: relative;
+  margin-left: 20px; /* ➤ 버튼 오른쪽 이동 */
+}
+
+.friend-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #3a3a3a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  
+}
+
+.friend-btn:hover {
+  background: #505050;
+}
+
+.friend-btn:active {
+  background: #2c2c2c;
+}
+
+.friend-popup {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 260px;
+  background: #181818;
+  border-radius: 16px;
+  padding: 14px 16px 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  display: none;
+  z-index: 20;
+}
+
+.friend-popup.show {
+  display: block;
+}
+
+.friend-popup::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  right: 24px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent transparent #181818 transparent;
+}
+
+.friend-popup-header {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.friend-search {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+}
+
+.friend-result {
+  list-style: none;
+  margin: 10px 0 12px;
+  padding: 0;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.friend-result li {
+  font-size: 13px;
+  padding: 6px 4px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.friend-result li:hover {
+  background: #262626;
+}
+
+/* 친구추가 팝업 안의 '친구 추가' 버튼 */
+.friend-add-confirm {
+  width: 100%;
+  padding: 8px 0;
+  border-radius: 10px;
+  border: none;
+  background: #505050;   /* 기본 회색 */
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: background 0.25s ease, transform 0.2s ease;
+  
+}
+
+
+
+.tabs {
+  width: 85%;
+  margin: 20px auto;
+  border-bottom: 1px solid #333;
+  display: flex;
+  gap: 30px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  color: #b3b3b3;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.container {
+  width: 85%;
+  margin: 25px auto;
+  display: flex;
+  gap: 25px;
+}
+
+.left-card {
+  width: 20%;
+  perspective: 1000px;
+}
+
+.right-card {
+  width: 70%;
+}
+
+.card-inner {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.group-card {
+  background: #181818;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+}
+
+.group-profile {
+   width: 60px;       /* 더 작게! */
+  height: 60px;
+  border-radius: 0;  /* 둥글기 제거 */
+  border: none;      /* 테두리 제거 */
+  object-fit: contain;
+
+
+
+
+}
+
+.group-info h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.group-info p {
+  font-size: 13px;
+  margin: 2px 0;
+  color: #dcdcdc;
+}
+
+.member-count {
+  font-weight: 600;
+}
+
+.leader {
+  color: #ffb8c7;
+  font-weight: 500;
+}
+
+/* ------------------------------ */
+/*   유저 메모 박스               */
+/* ------------------------------ */
+
+.user-memo {
+  width:100%;
+  margin: 0 auto 25px;
+  background: #181818;
+  border-radius: 18px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.user-memo textarea {
+  width: 100%;
+  height: 70px;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #fff;
+  resize: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.user-memo textarea::placeholder {
+  color: #777;
+}
+
+.profile-image img {
+  animation: slime-bounce 2s infinite ease-in-out;
+}
+
+@keyframes slime-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  40% {
+    transform: translateY(-10px) scale(1.03, 0.97);
+  }
+  60% {
+    transform: translateY(0) scale(0.97, 1.03);
+  }
+}
+.profile-left {
+  position: absolute;
+  left: 150px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: row;   /* ← 세로 → 가로 정렬 */
+  align-items: center;   /* ← 가운데 정렬 */
+  gap: 30px;             /* 오른쪽과 비슷한 간격 */
+}
+
+/* 오른쪽 stats와 같은 스타일 적용 */
+.left-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.left-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-stats strong {
+  font-size: 18px;
+}
+
+.left-stats span {
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+/* 기본 : 회색 */
+.left-like-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #505050;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: background 0.25s ease, transform 0.2s ease;
+  position: relative;
+  overflow: visible;
+}
+
+/* hover */
+.left-like-btn:hover {
+  background: #6a6a6a;
+  transform: scale(1.05);
+}
+
+/* active (누르는 순간) */
+.left-like-btn:active {
+  background: #3f3f3f;
+  transform: scale(0.95);
+}
+
+/* 좋아요 상태 */
+.left-like-btn.liked {
+  background: rgba(199, 90, 122, 0.4);
+  color: #fff;
+  transform: scale(1.12);
+  animation: heart-bounce 0.35s ease-out;
+}
+
+/* 하트 bounce 효과 */
+@keyframes heart-bounce {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.25); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1.12); }
+}
+
+
+/* +1 텍스트 */
+.like-plus {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff7bb0;
+  opacity: 0;
+  pointer-events: none;
+  animation: plus-float 0.7s ease-out forwards;
+}
+
+@keyframes plus-float {
+  0% { 
+    transform: translate(-50%, 0px);
+    opacity: 1;
+  }
+  100% { 
+    transform: translate(-50%, -25px);
+    opacity: 0;
+  }
+}
+
+/* Media Query: 화면 너비가 1200px 이하일 때 적용 */
+@media (max-width: 1200px) {
+    .profile-header {
+        /* 좁은 화면에서는 좌우 패딩을 줄여 공간 확보 */
+        padding: 25px 20px;
+        /* 가운데 프로필을 중심으로 정렬되도록 변경 (gap 삭제) */
+        gap: 0;
+    }
+
+    /* 좁은 화면에서 좌우 통계 섹션을 숨김 */
+    .profile-left,
+    .profile-right {
+        display: none;
+    }
+    
+    /* 가운데 프로필 섹션의 너비를 꽉 채우도록 설정 */
+    .profile-center {
+        flex: none; /* flex: 1 해제 */
+    }
+}
+/* 탭 글씨 키우기 */
+.tabs button {
+  background: none;
+  border: none;
+  font-size: 18px;   /* 기존보다 크게 */
+  color: #b3b3b3;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all 0.2s ease; /* hover 부드럽게 */
+}
+
+/* hover 효과: 색 안바꾸고 강조만 */
+.tabs button:hover {
+  transform: scale(1.1); /* 살짝 커짐 */
+  font-weight: 600;      /* 글자 두껍게 */
+}
+
+/* ------------------------------ */
+/*   상단 네비게이션 바           */
+/* ------------------------------ */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background:  rgba(24, 24, 24, 0.32);
+  /* backdrop-filter: blur(10px); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* 로고 */
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* 메뉴 */
+.nav-right {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-right a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* Hover 시 강조 (색 변화 없이 두께 + scale) */
+.nav-right a:hover {
+  font-weight: 600;
+  transform: scale(1.08);
+}
+
+/* active 메뉴(선택된 메뉴 강조하고 싶을 때) */
+.nav-right a.active {
+  color: #ffffff;
+  font-weight: 700;
+}

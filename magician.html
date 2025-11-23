@@ -5,106 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>타로 성격유형 결과</title>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 200, 255, 0.2);
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fceaff;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #f9d6ff;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 6px rgba(255, 200, 255, 0.4);
-    }
-
-    .keyword {
-      font-weight: bold;
-      color: #e5c8ff;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      color: #e0b3ff;
-      margin-top: 1.5rem;
-      text-shadow: 0 0 4px rgba(255, 200, 255, 0.3);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    blockquote {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid #e5c8ff;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-style: italic;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-    }
-
-    .tarot-image {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      margin: 0 auto 1.5rem auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 200, 255, 0.3);
-    }
-    html, body {
-    height: auto;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-  }
-  </style>
+  <link rel="stylesheet" href="resultdesign.css">
 </head>
 <body>
   <div class="card">
-    <img src="The Magician.jpg" alt="The Magician 타로카드 이미지" class="tarot-image">
+    <!-- 카드 앞/뒷면 구조 -->
+    <div class="tarot-container">
+      <div class="tarot-card" id="tarotCard">
+        <div class="tarot-front">
+          <img src="사진더미/카드이미지2.jpg" alt="타로카드 뒷면">
+        </div>
+        <div class="tarot-back">
+          <img src="사진더미/The Magician.jpg" alt="The Magician">
+        </div>
+      </div>
+    </div>
+
     <h2>🃏 당신은 <strong>The Magician (마법사)</strong> 타입입니다!</h2>
     <p class="keyword"><strong>키워드:</strong> 창의적 · 다재다능 · 기회를 잡는 사람</p>
     <p><strong>성격 한 줄 요약:</strong> "할 수 있다면 해낸다. 기회는 내가 만든다."</p>
 
-    <h3 class="section-title">🌟 특징</h3>
-    <ul>
-      <li>말재주가 뛰어나고, 어떤 상황에서도 자원을 활용할 줄 아는 마법 같은 능력자.</li>
-      <li>새로운 아이디어가 많고, 남들이 생각하지 못한 방식으로 문제를 해결함.</li>
-      <li>매사에 “내가 해보면 잘할 수 있어”라는 자신감을 가짐.</li>
-    </ul>
+    <h3 class="section-title">🌟 카드의 의미</h3>
+    <p>
+      말재주가 뛰어나고, 어떤 상황에서도 자원을 활용할 줄 아는<br> 
+      마법 같은 능력을 지닌 자입니다.<br>
+      새로운 아이디어가 많고,<br>
+      남들이 생각하지 못한 방식으로 문제를 해결합니다.<br>
+      매사에 '내가 해보면 잘할 수 있어'라는 자신감을 가지고 있습니다.
+    </p>
 
-    <h3 class="section-title">✅ 강점</h3>
-    <ul>
-      <li>창의력 폭발, 다방면에 재능</li>
-      <li>사람들을 끌어들이는 매력과 설득력</li>
-      <li>실행력과 순발력</li>
-    </ul>
+    <h3 class="section-title">✨ 이 카드가 속삭이는 강점</h3>
+    <p>
+      당신은 끝없는 창의력의 샘을 지니고 있습니다.<br>
+      어떤 주제든 손에 쥐면 새로운 무대로 바꿀 수 있지요.<br>
+      사람들을 끌어들이는 특별한 카리스마와 설득력이 있어, <br>
+      당신의 말은 단순한 언어가 아니라 '주문(呪文)'처럼 들립니다.<br>
+      무엇보다도, 생각을 현실로 옮기는 실행력과 순발력이<br> 
+      당신을 더욱 돋보이게 만듭니다.
+    </p>
 
-    <h3 class="section-title">⚠️ 약점</h3>
-    <ul>
-      <li>지나치게 자신감이 넘쳐 무리수 둘 때 있음</li>
-      <li>하나에 집중하지 못하고 산만해지기도</li>
-    </ul>
+    <h3 class="section-title">⚠️ 이 카드의 경고</h3>
+    <p>
+      그러나, 마법사는 빛과 그림자를 함께 지니고 있습니다.<br>
+      강한 자신감은 때로는 과도한 자만심이 되어 돌아올 수 있습니다.<br>
+      너무 많은 것을 동시에 이루려다 보면,<br>
+      정작 중요한 순간에 집중하지 못하고 산만한 그림자에 휘말릴 위험도 있지요.<br>
+      세상은 당신에게 무대를 내어주었지만,<br>
+      그 무대를 얼마나 오래 지켜낼지는 결국 당신의 집중력에 달려있습니다.
+    </p>
 
-    <h3 class="section-title">🧭 조언</h3>
+    <h3 class="section-title">🧭 예언가의 조언</h3>
     <blockquote>
-      당신은 인생을 ‘마법처럼’ 만들어가는 사람입니다. 무대를 바꿔가며 빛나려면, <strong>집중력과 책임감</strong>도 함께 키워보세요.
+      마법은 단순히 화려함에서 끝나지 않습니다.<br>
+      <strong>집중력과 책임감</strong>이라는 두 가지 룬을 붙잡았을 때,<br>
+      당신의 마법은 잠깐의 불꽃놀이가 아닌,<br>
+      세상을 바꾸는 위대한 힘으로 완성될 것입니다.
     </blockquote>
   </div>
+
+  <script src="result.js"></script>
 </body>
 </html>

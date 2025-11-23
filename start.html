@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="styles.css"/>
-
   <style>
     body {
       margin: 0;
@@ -13,19 +12,13 @@
     }
 
     .start-page {
-      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-        width: 100vw;       /* 화면 너비 꽉 채우기 */
-  max-width: 100vw;   /* 넘치지 않게 */
-  padding: 40px 10px; /* 좌우 패딩 줄이기 */
-  box-sizing: border-box;
-  overflow-x: visible; /* 좌우 넘침 허용 */
-     
-      padding: 40px 20px;
+      width: 100vw;
+      height: 100vh;
       position: relative;
       overflow: hidden;
     }
@@ -35,7 +28,7 @@
       font-weight: bold;
       margin-bottom: 20px;
       color: #f5eaff;
-      text-shadow: 0 0 10px rgba(255, 180, 255, 0.3);
+      text-shadow: 0 0 10px rgba(255, 230, 120, 0.381);
     }
 
     .subtitle {
@@ -48,6 +41,7 @@
     button {
       padding: 12px 24px;
       font-size: 18px;
+      font-weight: 700;
       border: none;
       border-radius: 8px;
       background: linear-gradient(135deg, #caa9ff, #e8d4ff);
@@ -56,55 +50,35 @@
       box-shadow: 0 0 10px rgba(200, 150, 255, 0.5);
       transition: transform 0.2s;
     }
-
-    button:hover {
-      transform: scale(1.05);
-    }
+    button:hover { transform: scale(1.05); }
 
     .cards {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
-      gap: 20px;
       pointer-events: none;
-      opacity: 0;
     }
 
     .card {
-      width: 140px;       /* 크기 키움 */
-      height: 220px;      /* 크기 키움 */
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 200, 255, 0.4);
-      transform: translateY(0);
-      opacity: 0;
-      transition: transform 0.8s ease, opacity 0.8s ease;
-
-      background-image: url('카드이미지.jpg');
+      width: 180px;   /* 140 → 180 */
+  height: 280px;  /* 220 → 280 */
+  border-radius: 10px; /* 모서리도 약간 키움 */
+      /* box-shadow: 0 0 15px rgba(255, 245, 180, 0.6); */
+      background-image: url('사진더미/다운로드.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+
+       box-shadow: 0 0 30px rgba(255, 245, 180, 0.098);
+
     }
 
-    .cards.animate .card:nth-child(1) {
-      transform: translate(-160px, -70px) rotate(-10deg);
-      opacity: 1;
-    }
-
-    .cards.animate .card:nth-child(2) {
-      transform: translate(0, -100px) rotate(0deg);
-      opacity: 1;
-    }
-
-    .cards.animate .card:nth-child(3) {
-      transform: translate(160px, -70px) rotate(10deg);
-      opacity: 1;
-    }
-
-    .cards.animate {
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -120,15 +94,36 @@
     </div>
   </main>
 
-  <script>
-    document.getElementById('startButton').addEventListener('click', () => {
-      const cards = document.getElementById('cardContainer');
-      cards.classList.add('animate');
+<script>
+ const cardPositions = [
+  {x:-160, y:-70, rot:-10},
+  {x:0, y:-100, rot:0},
+  {x:160, y:-70, rot:10}
+];
 
-      setTimeout(() => {
-        window.location.href = '1.html';
-      }, 1500); // 애니메이션 후 이동
+document.getElementById('startButton').addEventListener('click', () => {
+  const cards = document.querySelectorAll('.card');
+
+  // 1. 펼치기 (중앙 기준)
+  cards.forEach((card, i) => {
+    card.style.transform = `translate(calc(-50% + ${cardPositions[i].x}px), calc(-50% + ${cardPositions[i].y}px)) rotate(${cardPositions[i].rot}deg)`;
+    card.style.opacity = 1;
+  });
+
+  // 2. 1.2초 후 중앙으로 모이기 (겹치기)
+  setTimeout(() => {
+    cards.forEach((card, i) => {
+      card.style.transform = `translate(-50%, -50%) rotate(0deg) scale(1.1)`;
+      card.style.zIndex = 3 - i; // 카드 2번이 맨 위
     });
-  </script>
+  }, 1200);
+
+  // 3. 2.5초 후 페이지 이동
+  setTimeout(() => {
+    window.location.href = '1.html';
+  }, 2500);
+});
+
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
       const scores = JSON.parse(localStorage.getItem("scores"));
       scores[type] += 1;
       localStorage.setItem("scores", JSON.stringify(scores));
-      window.location.href = "loading.html";
+      window.location.href = "9.html";
     }
 
     // 여러 타입에 점수 추가 함수
@@ -22,7 +22,7 @@
         scores[type] += 1;
       });
       localStorage.setItem("scores", JSON.stringify(scores));
-      window.location.href = "loading.html";
+      window.location.href = "9.html";
     }
   </script>
 </head>
@@ -38,11 +38,11 @@
 
   <main>
     <div class="question">
-      <p>나는 조별과제를 할 때</p>
+      <p>길에서 누군가 앞을 막고 서 있으면</p>
     </div>
     <div class="buttons">
-      <button onclick="addScore('마법사')">주도한다</button>
-      <button onclick="addScoreMultiple(['여사제','바보', '탑'])">팀원들을 잘 따른다</button>
+      <button onclick="addScore('탑')">비집고 앞으로 간다</button>
+      <button onclick="addScore('여사제')">그냥 느리게 간다</button>
     </div>
     
   </main>

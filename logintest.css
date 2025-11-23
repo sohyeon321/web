@@ -1,0 +1,102 @@
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+}
+
+body {
+  background: #1a1a1a;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+
+/* 로그인 박스 */
+.login-box {
+  position: relative;
+  z-index: 10;
+  width: 400px;
+  padding: 45px 40px 50px;
+  background: #181818;
+  border-radius: 0;  /* ⭐ 직사각형으로 변경 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* 라벨 */
+.login-box label {
+  font-size: 14px;
+  color: #dcdcdc;
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+
+/* 인풋 */
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 0px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.login-box input::placeholder {
+  color: #777;
+}
+
+/* 로그인 버튼 */
+.login-btn {
+  margin-top: 28px;
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 0px;
+  background: #3a3a3a;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #4a4a4a;
+}
+
+.login-btn:active {
+  background: #2d2d2d;
+}
+
+/* 하단 링크 */
+.sub-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-links a {
+  font-size: 13px;
+  color: #b5b5b5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.sub-links a:hover {
+  color: #ffffff;
+}

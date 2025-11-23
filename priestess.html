@@ -5,124 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>타로 성격유형 결과</title>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 200, 255, 0.2);
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fceaff;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #f9d6ff;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 6px rgba(255, 200, 255, 0.4);
-    }
-
-    .keyword {
-      font-weight: bold;
-      color: #e5c8ff;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      color: #e0b3ff;
-      margin-top: 1.5rem;
-      text-shadow: 0 0 4px rgba(255, 200, 255, 0.3);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    blockquote {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid #e5c8ff;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-style: italic;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-    }
-
-    .tarot-image {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      margin: 0 auto 1.5rem auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 200, 255, 0.3);
-    }
-
-    html, body {
-      height: auto;
-      min-height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-y: auto;
-    }
-
-    .video-wrapper {
-      text-align: center;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="resultdesign.css"/>
 </head>
 <body>
   <div class="card">
-    <img src="Priestess.jpg" alt="The High Priestess 타로카드 이미지" class="tarot-image">
-    <h2>🃏 당신은 <strong>The High Priestess (여사제)</strong> 타입입니다!</h2>
+    <div class="tarot-container">
+      <div class="tarot-card" id="tarotCard">
+        <div class="tarot-front">
+          <img src="사진더미/카드이미지2.jpg" alt="타로카드 뒷면">
+        </div>
+        <div class="tarot-back">
+          <img src="사진더미/Priestess.jpg" alt="The High Priestess 타로카드 이미지">
+        </div>
+      </div>
+    </div>
+
+    <h2>🃏 당신은 <strong>The High Priestess (여사제)</strong> 타입입니다</h2>
     <p class="keyword"><strong>키워드:</strong> 직관적 · 신비로움 · 내면 탐구자</p>
     <p><strong>성격 한 줄 요약:</strong> "모든 답은 내 안에 있다."</p>
 
-    <h3 class="section-title">🌟 특징</h3>
-    <ul>
-      <li>혼자 있는 시간이 필요하고, 내면의 감정과 직관을 믿는 타입.</li>
-      <li>감정에 민감하고 사람의 진심을 꿰뚫어보는 눈이 있음.</li>
-      <li>겉으로는 조용하지만 속은 깊은 우물처럼 복잡하고 풍부함.</li>
-    </ul>
+    <h3 class="section-title">🌟 카드의 의미</h3>
+      <p>
+        여사제는 단순한 사람이 아닙니다.<br>
+        <strong>그녀는 세상과 단절된 듯한 고요 속에서, <br>
+        진리와 비밀을 지키는 자</strong>입니다.<br>
+        당신은 또한 혼자 있는 시간이 필요하고,<br>
+        외부의 소음보다는 <strong>내면의 감정과 직관</strong>을 믿는 성향을 지니고 있습니다.<br>
+        때로는 다른 사람들의 눈에 신비롭고 알 수 없는 존재로 비치기도 합니다.<br>
+        하지만 그 고요한 표정 뒤에는 <strong>복잡하고 풍부한 감정</strong>,<br>
+        그리고 <strong>누구도 쉽게 다가올 수 없는 깊이</strong>가 숨어 있지요.
+      </p>
 
-    <h3 class="section-title">✅ 강점</h3>
-    <ul>
-      <li>타인의 심리를 잘 이해하고 공감력 뛰어남</li>
-      <li>위기 상황에서 차분하고 통찰력 있음</li>
-      <li>조용한 리더십</li>
-    </ul>
 
-    <h3 class="section-title">⚠️ 약점</h3>
-    <ul>
-      <li>지나치게 혼자만의 세계에 빠지거나 감정을 숨김</li>
-      <li>표현 부족으로 오해받을 수 있음</li>
-    </ul>
+    <h3 class="section-title">✨ 이 카드가 속삭이는 강점</h3>
+    <p>
+      당신은 타인의 심리를 꿰뚫어보는 통찰력이 있습니다.<br>
+      또한 다른 이들이 보지 못하는<br> 
+      <strong>진실의 결</strong>을 알아차리는 눈을 지니고 있군요.<br>
+      사람들은 당신 곁에 있으면 왠지 모르게<br>
+      <strong>편안함</strong>과 <strong>신뢰감</strong>을 느낍니다.<br>
+      위기의 순간에도, 당신은 <strong>흔들리지 않는 리더십</strong>을 발휘하지요.<br>
+      세상은 당신을 단순히 조용한 사람이라 말할지 모르지만,<br>
+      사실 당신은 <strong>'눈에 보이지 않는 세계의 해석자'</strong>입니다.<br>
+    </p>
 
-    <h3 class="section-title">🧭 조언</h3>
+    <h3 class="section-title">⚠️ 이 카드의 경고</h3>
+    <p>
+      그러나 여사제의 그림자는 언제나 함께합니다.<br>
+      감정을 너무 감추면, 오해를 사기 쉽습니다.<br>
+      내면에 깊이 빠져드는 것은 축복이지만,<br>
+      때로는 세상과의 연결을 끊어버릴 위험도 있습니다.
+    </p>
+
+    <h3 class="section-title">🧭 예언가의 조언</h3>
     <blockquote>
-      당신의 직관은 날카롭지만, <strong>때로는 마음을 열고 말로 표현하는 연습</strong>이 필요해요. 세상도 당신을 더 알고 싶어하니까요.
+      혼자 머릿속에서 아무리 굴려봐야 세상이 달라지진 않아요.<br>
+      괜히 깊게 파고들다가 지쳐버리기 전에, <br>
+      적당히 생각하고 적당히 표현하면서 지내는 게 훨씬 현명하죠. <br>
+      세상은 당신이 그렇게 골똘히 끙끙대는 걸 바라지도 않아요.<br>
+      가볍게 나누고 흘려보내며 살아가세요.<br>
+      그게 오히려 당신을 더 자유롭게 만들어 줄 겁니다.
     </blockquote>
 
-    <div class="video-wrapper">
-      <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/72FzC54G2rw?si=nXuHDe17idOYz3AS" 
-        title="YouTube video player"
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
-    </div>
+    
+    <script src="result.js"></script>
   </div>
 </body>
 </html>

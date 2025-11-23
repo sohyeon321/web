@@ -5,106 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>타로 성격유형 결과</title>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .card {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 200, 255, 0.2);
-      padding: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #fceaff;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #f9d6ff;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 6px rgba(255, 200, 255, 0.4);
-    }
-
-    .keyword {
-      font-weight: bold;
-      color: #e5c8ff;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.3rem;
-      color: #e0b3ff;
-      margin-top: 1.5rem;
-      text-shadow: 0 0 4px rgba(255, 200, 255, 0.3);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
-    }
-
-    blockquote {
-      background: rgba(255, 255, 255, 0.1);
-      border-left: 4px solid #e5c8ff;
-      padding: 1rem;
-      margin-top: 1rem;
-      font-style: italic;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
-    }
-
-    .tarot-image {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      margin: 0 auto 1.5rem auto;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 200, 255, 0.3);
-    }
-    html, body {
-    height: auto;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-  }
-  </style>
+  <link rel="stylesheet" href="resultdesign.css"/>
 </head>
 <body>
   <div class="card">
-    <img src="The Tower.jpg" alt="The Magician 타로카드 이미지" class="tarot-image">
+   <div class="tarot-container">
+      <div class="tarot-card" id="tarotCard">
+        <div class="tarot-front">
+          <img src="사진더미/카드이미지2.jpg" alt="타로카드 뒷면">
+        </div>
+        <div class="tarot-back">
+          <img src="사진더미/The Tower.jpg" alt="The Magician">
+        </div>
+      </div>
+    </div>
+
+
     <h2>🃏 당신은 <strong>The Tower (탑)</strong> 타입입니다!</h2>
     <p class="keyword"><strong>키워드:</strong> 진실의 충격 · 변화 촉발자 · 파괴 후 재창조</p>
     <p><strong>성격 한 줄 요약:</strong> "진짜를 위해선 가짜를 부숴야 해."</p>
 
-    <h3 class="section-title">🌟 특징</h3>
-    <ul>
-      <li>틀에 박힌 것, 위선적인 것을 보면 못 참음</li>
-      <li>변화와 혼돈을 두려워하지 않고 오히려 만들어냄</li>
-      <li>다른 사람에게는 '충격요법' 같은 존재</li>
-    </ul>
+    <h3 class="section-title">🌟 카드의 의미</h3>
+    <p>
+      탑은 언제나 낡은 질서를 무너뜨리는 번개와도 같습니다.<br>
+      당신은 세상에 오래된 가짜와 위선을 보면<br>
+      차마 눈을 감고 지나칠 수 없습니다. <br>
+      그래서 사람들은 당신을 만나면<br>
+      마치 ‘충격요법’을 맞은 듯 정신이 번쩍 들곤 하지요. <br>
+      변화와 혼란을 두려워하기는커녕,<br>
+      오히려 그 한가운데로 걸어 들어가 불필요한 허상을 무너뜨립니다.<br> 
+      당신에게 있어 파괴란 단순한 끝이 아니라, <br>
+      진짜를 드러내기 위한 새로운 시작의 제례입니다
+    </p>
 
-    <h3 class="section-title">✅ 강점</h3>
-    <ul>
-      <li>진실을 직시하고 과감히 행동하는 용기</li>
-      <li>혁신, 개혁, 구조조정에 능함</li>
-      <li>자기 성장에 대한 욕망이 강함</li>
-    </ul>
+    <h3 class="section-title">✨ 이 카드가 속삭이는 강점</h3>
+    <p>
+      당신의 힘은 진실을 직시하는 눈과<br>
+      그것을 행동으로 옮길 용기에 있습니다.<br>
+      다른 이들이 주저하며 외면할 때,<br>
+      당신은 과감히 한 걸음을 내딛어 판을 흔듭니다.<br>
+      그 과정에서 혁신과 개혁이 따라오고,<br>
+      무너진 자리에는 더 단단한 구조가 세워집니다.<br>
+      또한 자기 성장에 대한 갈망이 누구보다 강해,<br> 
+      변화의 고통조차도 배움으로 삼아 결국 자신을 한 단계 더 올려놓습니다.<br> 
+      당신은 단순히 ‘변화를 일으키는 사람’이 아니라, 변화를 살아내는 사람입니다.
+    <p>
 
-    <h3 class="section-title">⚠️ 약점</h3>
-    <ul>
-      <li>말이나 행동이 너무 직설적일 수 있음</li>
-      <li>주변 사람들에게 ‘위험 요소’처럼 보일 수 있음</li>
-    </ul>
+    <h3 class="section-title">⚠️ 이 카드의 경고</h3>
+    <p>
+     그러나 번개는 늘 찬란하면서도 위험합니다.<br> 
+     당신의 솔직함과 급진적인 행동은 때로는 칼날처럼<br>
+     날카롭게 다가와 주변 사람들의 마음을 베어버릴 수 있습니다.<br> 
+     진실을 향한 당신의 직설은 때로는 ‘구원’이 되지만,<br> 
+     또 어떤 이에게는 ‘위협’으로 다가오지요.<br>  
+     너무 빨리, 너무 강하게 무너뜨리려 한다면,<br>  
+     그 폐허 속에서 당신조차 길을 잃을 수 있습니다.<br>  
+     세상은 무너뜨리는 손만큼, 지켜주려는 손길도 필요하다는 것을 잊지 마세요<br> 
+    </p>
 
-    <h3 class="section-title">🧭 조언</h3>
+    <h3 class="section-title">🧭 예언가의 조언</h3>
     <blockquote>
-     당신은 세상을 바꾸는 ‘파괴적 혁신가’입니다. 하지만 <strong>부수기 전에 이해하려는 마음</strong>도 함께 가져보세요. 진정한 변화는 공감에서 시작되니까요.
+     당신은 세상을 바꾸는 <strong>‘파괴적 혁신가’</strong>입니다. <br>
+     하지만 탑이 무너진 자리에서 새로운 질서를 세우려면, <br>
+     부수기 전의 이해와 공감이 반드시 필요합니다. <br>
+     세상이 당신의 불꽃 같은 진실을 감당하려면, <br>
+     그 불꽃이 타인을 태우는 것이 아니라 따뜻하게 비추어야 합니다. <br>
+     무너뜨린 잔해 위에 진정한 희망을 세우고 싶다면, <br>
+     부수려는 마음과 함께 끌어안으려는 마음도 함께 가져가세요. <br>
+     진정한 변화는 힘에서 완성되지 않고, 공감에서 시작됩니다.<br>
     </blockquote>
   </div>
+  <script src="result.js"></script>
 </body>
 </html>

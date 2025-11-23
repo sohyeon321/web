@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPage</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+<nav class="top-nav">
+  <div class="nav-left">
+    <span class="nav-logo">SlimeGarden</span>
+  </div>
+
+
+  
+  <div class="nav-right">
+    <a href="#">홈</a>
+    <a href="login.html">로그인</a>
+    <a href="#">내 페이지</a>
+  </div>
+</nav>
+
+  <div class="cover"></div>
+  <div class="cover-overlay"></div>
+  <div class="red-gradient-bg"></div>
+
+  <div class="profile-header">
+
+    <!-- 가운데 : 프로필 이미지 + 이름 -->
+    <div class="profile-center">
+     <div class="profile-image">
+        <img src="사진더미/purpleslime.png" />
+    </div>
+
+      <h2>김소현</h2>
+      <p>@annnsh2</p>
+    </div>
+
+ <!-- 왼쪽 : money / like / like 버튼 -->
+  <div class="profile-left">
+  <div class="left-stats">
+    <div><strong>938</strong><span>money</span></div>
+    <div><strong>3</strong><span>likes</span></div>
+  </div>
+
+  <button class="left-like-btn">❤️</button>
+</div>
+
+
+
+    <!-- 오른쪽 : stats + 친구추가 -->
+    <div class="profile-right">
+      <div class="right-top">
+        <div class="stats">
+          <div><strong>938</strong><span> money</span></div>
+          <div><strong>3</strong><span> friends</span></div>
+          <div><strong>3</strong><span> like</span></div>
+        </div>
+
+        <div class="friend-wrapper">
+          <button class="friend-btn" id="friendToggleBtn">친구 추가</button>
+          <div class="friend-popup" id="friendPopup">
+            <div class="friend-popup-header">친구 추가</div>
+            <input type="text" class="friend-search" placeholder="닉네임 검색">
+            <ul class="friend-result">
+              <li>@annnsh2</li>
+              <li>@example_user</li>
+            </ul>
+            <button class="friend-add-confirm">친구 추가</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="active">상점가기</button>
+    <button>보관함</button>
+  </div>
+
+  <div class="container">
+
+    
+
+    <!-- 왼쪽 카드 -->
+    <div class="left-card">
+      <div class="card-inner flipped">
+        <div class="card-front">
+          <img src="사진더미/The Magician.jpg" alt="앞면 카드">
+        </div>
+        <div class="card-back">
+          <img src="사진더미/카드이미지2.jpg" alt="뒷면 카드">
+        </div>
+      </div>
+    </div>
+
+    <!-- 오른쪽 그룹 카드 리스트 -->
+    <div class="right-card">
+
+        <!-- 메모 영역 -->
+  <div class="user-memo">
+    <textarea placeholder="오늘의 메모를 남겨보세요 :)"></textarea>
+  </div>
+      <div class="group-card">
+        <img class="group-profile" src="사진더미/originalslime.png">
+        <div class="group-info">
+          <h2>컴퓨터 비전</h2>
+          <p class="member-count">4 / 10명</p>
+          <p class="leader">이찬영 (방장)</p>
+        </div>
+      </div>
+      <div class="group-card">
+        <img class="group-profile" src="사진더미/originalslime.png">
+        <div class="group-info">
+          <h2>머신러닝</h2>
+          <p class="member-count">6 / 10명</p>
+          <p class="leader">홍길동 (방장)</p>
+        </div>
+      </div>
+      <div class="group-card">
+        <img class="group-profile" src="사진더미/originalslime.png">
+        <div class="group-info">
+          <h2>머신러닝</h2>
+          <p class="member-count">6 / 10명</p>
+          <p class="leader">홍길동 (방장)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+  <script>
+    window.addEventListener("scroll", () => {
+      const overlay = document.querySelector(".cover-overlay");
+      const card = document.querySelector(".card-inner");
+      const scrollY = window.scrollY;
+
+      let overlayOpacity = scrollY / 200;
+      if (overlayOpacity > 1) overlayOpacity = 1;
+      overlay.style.opacity = overlayOpacity;
+
+      if (scrollY > 200) {
+        card.classList.remove("flipped");
+      } else {
+        card.classList.add("flipped");
+      }
+    });
+
+    const friendToggleBtn = document.getElementById("friendToggleBtn");
+    const friendPopup = document.getElementById("friendPopup");
+
+    if (friendToggleBtn && friendPopup) {
+      friendToggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        friendPopup.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!friendPopup.contains(e.target) && e.target !== friendToggleBtn) {
+          friendPopup.classList.remove("show");
+        }
+      });
+    }
+    
+// 좋아요 버튼 핑크 토글 + 애니메이션
+const likeBtn = document.querySelector(".left-like-btn");
+
+likeBtn.addEventListener("click", () => {
+  const isLiked = likeBtn.classList.toggle("liked");
+
+  // 좋아요를 누른 경우에만 +1 생성
+  if (isLiked) {
+    const plus = document.createElement("span");
+    plus.classList.add("like-plus");
+    plus.textContent = "+1";
+    likeBtn.appendChild(plus);
+
+    setTimeout(() => {
+      plus.remove();
+    }, 700);
+  }
+});
+
+
+    
+  </script>
+
+</body>
+</html>

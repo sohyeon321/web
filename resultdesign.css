@@ -1,0 +1,111 @@
+.card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 200, 255, 0.2);
+      padding: 2rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fceaff;
+      text-align: center;
+      font-size: 1.1rem; /* 기본 글씨 키움 */
+      line-height: 1.8; /* 줄 간격 증가 */
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #f9d6ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 6px rgba(255, 200, 255, 0.4);
+    }
+
+    .keyword {
+      font-weight: bold;
+      color: #e5c8ff;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: #e0b3ff;
+      margin-top: 3rem;
+      text-shadow: 0 0 4px rgba(255, 200, 255, 0.3);
+    }
+
+    blockquote {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid #e5c8ff;
+      padding: 1.5rem;
+      font-style: italic;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 200, 255, 0.2);
+      font-size: 1.2rem; /* 글씨 키움 */
+      line-height: 1.7; /* 줄 간격 증가 */
+       position: relative;
+    }
+    blockquote::before {
+      content: "❝";
+      font-size: 2rem;
+      color: #c49bff;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+    }
+
+    blockquote::after {
+      content: "❞";
+      font-size: 2rem;
+      color: #c49bff;
+      position: absolute;
+      bottom: -10px;
+      right: 10px;
+    }
+
+
+    /* 카드 뒤집기 애니메이션 */
+    .tarot-container {
+      perspective: 1000px; /* 3D 효과 */
+      width: 260px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .tarot-card {
+      width: 100%;
+      height: 450px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .tarot-card.flip {
+      transform: rotateY(180deg);
+    }
+
+    .tarot-front, .tarot-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 200, 255, 0.3);
+      overflow: hidden;
+    }
+
+    .tarot-front img, .tarot-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tarot-back {
+      transform: rotateY(180deg);
+    }
+
+    html, body {
+      height: auto;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+    }
