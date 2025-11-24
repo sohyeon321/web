@@ -50,6 +50,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
   if (data.success) {
     alert("로그인 성공!");
+    window.location.href = "mypage.html";   // 🔥 로그인 성공하면 마이페이지로 이동
   } else {
     alert("로그인 실패: " + data.message);
   }

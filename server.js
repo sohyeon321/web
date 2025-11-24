@@ -11,9 +11,11 @@ app.use(cors());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "4656",
-  database: "myweb"
+  password: "xmrtnanswk00!",
+  database: "myweb",
+  port: 8082
 });
+
 
 db.connect(err => {
   if (err) return console.error("DB 연결 오류:", err);

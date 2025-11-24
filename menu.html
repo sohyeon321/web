@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient Box Layout</title>
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body {
+      background: #000;
+      font-family: "Noto Sans KR", sans-serif;
+      color: #fff;
+    }
+
+    /* 메인 메뉴 박스 */
+    .content-wrapper {
+      width: 100%;
+      max-width: 1500px;
+      margin: 200px auto;
+      background: #0f0f0f;
+      padding: 40px 40px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 상단 그라데이션 */
+    .content-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 140px;
+      background: linear-gradient(to bottom, rgb(46,45,45), rgba(15, 15, 15, 0));
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* 상단 메뉴 타이틀 */
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .menu-header h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .btn-home {
+      color: #b3b3b3;
+      font-size: 13px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* 메뉴 카드 리스트 */
+    .menu-row {
+      display: flex;
+      gap: 20px;
+      position: relative;
+      z-index: 10; 
+    }
+
+    /* 메뉴 카드 */
+    .menu-card {
+      width: 170px;
+      background: #202020;
+      padding: 10px;
+      border-radius: 6px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .menu-card:hover {
+      background: #2a2a2a;
+      transform: translateY(-3px);
+    }
+
+    .menu-cover {
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: #333;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .menu-cover img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+
+    .menu-title {
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .menu-desc {
+      font-size: 12px;
+      color: #b3b3b3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content-wrapper">
+
+    <div class="menu-header">
+      <h2>메뉴</h2>
+      <button class="btn-home" onclick="location.href='mypage.html'">홈으로 가기</button>
+    </div>
+
+    <div class="menu-row">
+
+      <div class="menu-card">
+        <div class="menu-cover"><img src="img/song1.jpg"></div>
+        <p class="menu-title">타로</p>
+        <p class="menu-desc">타로 기반 심리테스트</p>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-cover"><img src="img/song2.jpg"></div>
+        <p class="menu-title">별자리 운세</p>
+        <p class="menu-desc">오늘의 순위는?</p>
+      </div>
+
+      <div class="menu-card">
+        <div class="menu-cover"><img src="img/song3.jpg"></div>
+        <p class="menu-title">성격진단 테스트</p>
+        <p class="menu-desc">&nbsp;</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

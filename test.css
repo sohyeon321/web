@@ -584,3 +584,21 @@ body {
   color: #ffffff;
   font-weight: 700;
 }
+/* 테스트하러가기 버튼 */
+.test-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 0;
+  background: #505050;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.test-btn:hover {
+  background: #6a6a6a;
+  transform: translateY(-2px);
+}

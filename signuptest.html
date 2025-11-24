@@ -28,7 +28,6 @@
 
     <a href="logintest.html">이미 계정이 있으신가요?</a>
   </div>
-
 <script>
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -55,9 +54,16 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
   });
 
   const data = await res.json();
-  alert(data.message);
+
+  if (data.success) {
+    alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+    window.location.href = "logintest.html";  // 🔥 로그인 페이지로 이동
+  } else {
+    alert("회원가입 실패: " + data.message);
+  }
 });
 </script>
+
 
 </body>
 </html>
